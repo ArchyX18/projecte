@@ -16,6 +16,7 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
   );
 }
 
+//Afefgir la llista de productes
 const styles = StyleSheet.create({
   container: {
     flex: 1,
