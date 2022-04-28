@@ -97,7 +97,7 @@ function BottomTabNavigator() {
                 name="info-circle"
                 size={25}
                 color={Colors[colorScheme].text}
-                style={{ marginRight: 15 }}
+                style={{ marginLeft: 15 }}
               />
             </Pressable>
           ),
