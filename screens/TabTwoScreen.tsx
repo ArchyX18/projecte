@@ -11,7 +11,7 @@ export default function TabTwoScreen({ navigation }) {
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <EditScreenInfo path="/screens/TabTwoScreen.tsx" />
       <Button
-        title="Go to Details"
+        title="Especificació prod"
         onPress={() => navigation.navigate('Carro')}
       />
     </View>

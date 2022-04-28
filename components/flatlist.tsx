@@ -38,22 +38,7 @@ export default function Llista (){
       />
     );
   };
-  /*
-  export default function Llista () {
-    const renderItem = ({ item }) => (
-      <Item title={item.title} />
-    );
-  
-    return (
-      <SafeAreaView style={styles.container}>
-        <FlatList
-          data={DATA}
-          renderItem={renderItem}
-          keyExtractor={item => item.id}
-        />
-      </SafeAreaView>
-    );
-  }*/
+
 
   return (
     <SafeAreaView style={styles.container}>
@@ -81,6 +66,3 @@ const styles = StyleSheet.create({
     fontSize: 32,
   },
 });
-
-/*
-*/
