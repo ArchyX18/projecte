@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FlatList, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { useNavigation } from '@react-navigation/native';
 
 const DATA = [
   {
@@ -22,18 +23,19 @@ const Item = ({ item, onPress, backgroundColor, textColor }) => (
   </TouchableOpacity>
 );
 
+
 export default function Llista (){
   const [selectedId, setSelectedId] = useState(null);
+  const navigation = useNavigation();
 
-  const renderItem = ({ item, navigation }) => {
+  const renderItem = ({ item }) => {
     const backgroundColor = item.id === selectedId ? "#6e3b6e" : "#f9c2ff";
     const color = item.id === selectedId ? 'white' : 'black';
 
     return (
       <Item
         item={item}
-        onPress={
-          () => { setSelectedId(item.id); navigation.navigate('Login'); }}
+        onPress={() => navigation.navigate('Login')}
         backgroundColor={{ backgroundColor }}
         textColor={{ color }}
 
@@ -70,3 +72,5 @@ const styles = StyleSheet.create({
     fontSize: 32,
   },
 });
+
+
