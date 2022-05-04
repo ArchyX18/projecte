@@ -25,16 +25,18 @@ const Item = ({ item, onPress, backgroundColor, textColor }) => (
 export default function Llista (){
   const [selectedId, setSelectedId] = useState(null);
 
-  const renderItem = ({ item }) => {
+  const renderItem = ({ item, navigation }) => {
     const backgroundColor = item.id === selectedId ? "#6e3b6e" : "#f9c2ff";
     const color = item.id === selectedId ? 'white' : 'black';
 
     return (
       <Item
         item={item}
-        onPress={() => setSelectedId(item.id)}
+        onPress={
+          () => { setSelectedId(item.id); navigation.navigate('Login'); }}
         backgroundColor={{ backgroundColor }}
         textColor={{ color }}
+
       />
     );
   };
@@ -47,6 +49,8 @@ export default function Llista (){
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
         extraData={selectedId}
+        navigation={navigator}
+       
       />
     </SafeAreaView>
   );

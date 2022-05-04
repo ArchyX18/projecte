@@ -1,7 +1,9 @@
+import React from 'react';
 import { StyleSheet } from 'react-native';
 
 
 import EditScreenInfo from '../components/EditScreenInfo';
+import FlatListDemo from '../components/FlatListDemo';
 import { Text, View } from '../components/Themed';
 
 export default function ProdDetail() {
@@ -10,6 +12,7 @@ export default function ProdDetail() {
       <Text style={styles.title}>Especificació de Producte</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <EditScreenInfo path="/screens/ProdDetail.tsx" />
+      <FlatListDemo/>
       
     </View>
 
