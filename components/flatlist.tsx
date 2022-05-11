@@ -73,5 +73,5 @@ const styles = StyleSheet.create({
   },
 });
 
-//JSON que farem servir de prova
+//JSON que farem servir de prova en una nova branca
 //https://jsonplaceholder.typicode.com/todos/
