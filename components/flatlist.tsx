@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FlatList, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 
@@ -19,14 +19,37 @@ const DATA = [
 
 const Item = ({ item, onPress, backgroundColor, textColor }) => (
   <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
-    <Text style={[styles.title, textColor]}>{item.title}</Text>
+    <Text style={[styles.title, textColor]}>{item.title}{item.releaseYear}</Text>
   </TouchableOpacity>
 );
 
 
+
+ 
+
 export default function Llista (){
   const [selectedId, setSelectedId] = useState(null);
   const navigation = useNavigation();
+
+  const [isLoading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
+
+  const getMovies = async () => {
+     try {
+      const response = await fetch('https://reactnative.dev/movies.json');
+      const json = await response.json();
+      setData(json.movies);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    getMovies();
+  }, []);
+
 
   const renderItem = ({ item }) => {
     const backgroundColor = item.id === selectedId ? "#6e3b6e" : "#f9c2ff";
@@ -47,7 +70,7 @@ export default function Llista (){
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
-        data={DATA}
+        data={data}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
         extraData={selectedId}
