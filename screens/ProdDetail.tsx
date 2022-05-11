@@ -1,15 +1,17 @@
+import React from 'react';
 import { StyleSheet } from 'react-native';
 
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
-export default function Screen3() {
+export default function ProdDetail() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Especificació de Producte</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/Screen3.tsx" />
+      <EditScreenInfo path="/screens/ProdDetail.tsx" />
+    
       
     </View>
 

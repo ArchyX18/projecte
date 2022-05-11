@@ -15,7 +15,7 @@ import useColorScheme from '../hooks/useColorScheme';
 import LoginScreen from '../screens/LoginScreen';
 import ModalScreen from '../screens/ModalScreen';
 import NotFoundScreen from '../screens/NotFoundScreen';
-import Screen3 from '../screens/Screen3';
+import ProdDetail from '../screens/ProdDetail';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
@@ -43,7 +43,7 @@ function RootNavigator() {
       <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
 
-      <Stack.Screen name="Carro" component={Screen3} />
+      <Stack.Screen name="Carro" component={ProdDetail} />
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Modal" component={ModalScreen} />
