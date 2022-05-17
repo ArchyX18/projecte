@@ -30,7 +30,7 @@ export default function Llista (){
 
   const getMovies = async () => {
      try {
-      const response = await fetch('https://api.jsonbin.io/b/627bfdc0019db467969b28da');
+      const response = await fetch('https://api.jsonbin.io/b/62837d5238be29676109292f');
       const json = await response.json();
       setData(json);
     } catch (error) {
@@ -53,7 +53,7 @@ export default function Llista (){
     return (
       <Item
         item={item}
-        onPress={() => navigation.navigate('Login')}
+        onPress={() => navigation.navigate('Detail')}
         backgroundColor={{ backgroundColor }}
         textColor={{ color }}
 
