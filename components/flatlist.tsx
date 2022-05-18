@@ -29,9 +29,9 @@ export default function Llista (){
 
  
 
-  const getMovies = async () => {
+  const getProducts = async () => {
      try {
-      const response = await fetch('https://api.jsonbin.io/b/6284b64825069545a33bc62a');
+      const response = await fetch('https://api.jsonbin.io/b/6284b64825069545a33bc62a/1');
       const json = await response.json();
       setData(json);
     } catch (error) {
@@ -43,7 +43,7 @@ export default function Llista (){
 
 
   useEffect(() => {
-    getMovies();
+    getProducts();
   }, []);
 
 
@@ -94,8 +94,3 @@ const styles = StyleSheet.create({
     fontSize: 32,
   },
 });
-
-//JSON que farem servir de prova en una nova branca
-//https://reactnative.dev/movies.json
-
-//https://github.com/GoogleChromeLabs/sample-pie-shop/blob/master/src/data/products.json
