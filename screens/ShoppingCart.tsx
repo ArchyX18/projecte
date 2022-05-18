@@ -4,15 +4,15 @@ import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
 
-export default function TabTwoScreen({ navigation }) {
+export default function ShoppingCart({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Carro de Compra</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabTwoScreen.tsx" />
+      <EditScreenInfo path="/screens/ShoppingCart.tsx" />
       <Button
-        title="Especificació prod"
-        onPress={() => navigation.navigate('Carro')}
+        title="Carro de la compra"
+        onPress={() => navigation.navigate('Detail')}
       />
     </View>
   );

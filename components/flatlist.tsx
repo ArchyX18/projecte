@@ -2,26 +2,17 @@ import React, { useEffect, useState } from "react";
 import { FlatList, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 
-const DATA = [
-  {
-    id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
-    title: "Samarreta",
-  },
-  {
-    id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
-    title: "Sabates",
-  },
-  {
-    id: "58694a0f-3da1-471f-bd96-145571e29d72",
-    title: "Llibres",
-  },
-];
+
+
+
 
 const Item = ({ item, onPress, backgroundColor, textColor }) => (
   <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
-    <Text style={[styles.title, textColor]}>{item.title}{item.releaseYear}</Text>
+    <Text style={[styles.title, textColor]}>{item.title}</Text>
   </TouchableOpacity>
 );
+
+
 
 
 
@@ -34,11 +25,15 @@ export default function Llista (){
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
+
+
+ 
+
   const getMovies = async () => {
      try {
-      const response = await fetch('https://reactnative.dev/movies.json');
+      const response = await fetch('https://api.jsonbin.io/b/6284b64825069545a33bc62a');
       const json = await response.json();
-      setData(json.movies);
+      setData(json);
     } catch (error) {
       console.error(error);
     } finally {
@@ -46,19 +41,22 @@ export default function Llista (){
     }
   }
 
+
   useEffect(() => {
     getMovies();
   }, []);
 
 
+  
+
   const renderItem = ({ item }) => {
     const backgroundColor = item.id === selectedId ? "#6e3b6e" : "#f9c2ff";
     const color = item.id === selectedId ? 'white' : 'black';
-
+    //console.log(item.id);
     return (
       <Item
         item={item}
-        onPress={() => navigation.navigate('Login')}
+        onPress={() => navigation.navigate('Detail', data[item.id])}
         backgroundColor={{ backgroundColor }}
         textColor={{ color }}
 
@@ -81,6 +79,7 @@ export default function Llista (){
   );
 };
 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -97,4 +96,6 @@ const styles = StyleSheet.create({
 });
 
 //JSON que farem servir de prova en una nova branca
-//https://jsonplaceholder.typicode.com/todos/
+//https://reactnative.dev/movies.json
+
+//https://github.com/GoogleChromeLabs/sample-pie-shop/blob/master/src/data/products.json
