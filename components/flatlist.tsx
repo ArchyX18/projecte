@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FlatList, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { useNavigation } from '@react-navigation/native';
-import * as data2 from '../assets/data/products.json';
 
 
 
@@ -13,7 +12,7 @@ const Item = ({ item, onPress, backgroundColor, textColor }) => (
   </TouchableOpacity>
 );
 
-console.log(data2);
+
 
 
 
@@ -26,11 +25,13 @@ export default function Llista (){
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
+
+
  
 
   const getMovies = async () => {
      try {
-      const response = await fetch('https://api.jsonbin.io/b/62837d5238be29676109292f');
+      const response = await fetch('https://api.jsonbin.io/b/6284b64825069545a33bc62a');
       const json = await response.json();
       setData(json);
     } catch (error) {
@@ -39,21 +40,23 @@ export default function Llista (){
       setLoading(false);
     }
   }
-  console.log(data);
+
 
   useEffect(() => {
     getMovies();
   }, []);
 
 
+  
+
   const renderItem = ({ item }) => {
     const backgroundColor = item.id === selectedId ? "#6e3b6e" : "#f9c2ff";
     const color = item.id === selectedId ? 'white' : 'black';
-
+    //console.log(item.id);
     return (
       <Item
         item={item}
-        onPress={() => navigation.navigate('Detail')}
+        onPress={() => navigation.navigate('Detail', data[item.id])}
         backgroundColor={{ backgroundColor }}
         textColor={{ color }}
 
