@@ -8,12 +8,14 @@ export default function Login() {
   return(
     
     <LoginScreen
-    logoImageSource={("./assets/images/login/logo.png")}
+    logoImageSource={require("../assets/images/login/logo.png")}
     onLoginPress={() => {}}
     onHaveAccountPress={() => navigation.navigate('Register')}
     onEmailChange={(email: string) => {}}
     onPasswordChange={(password: string) => {}}
-    />
+    >
+        
+    </LoginScreen>
   );
 }
 
