@@ -1,12 +1,15 @@
-import React from 'react';
+
 import { StyleSheet } from 'react-native';
+import React, { useEffect, useState } from "react";
 
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
-export default function ProdDetail({route, navigation}) {
+export default function ProdDetail({route}) {
   //console.log(route.params.title);
+
+  
   
 
   return (
@@ -42,3 +45,5 @@ const styles = StyleSheet.create({
     width: '80%',
   },
 });
+
+
