@@ -9,7 +9,7 @@ export default function Login() {
     
     <LoginScreen
     logoImageSource={require("../assets/images/login/logo.png")}
-    onLoginPress={() => {}}
+    onLoginPress={() => navigation.navigate('TabOne')}
     onHaveAccountPress={() => navigation.navigate('Register')}
     onEmailChange={(email: string) => {}}
     onPasswordChange={(password: string) => {}}
