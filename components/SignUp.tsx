@@ -13,10 +13,26 @@ export default class SignUp extends React.Component {
   onChangeText = (key, val) => {
     this.setState({ [key]: val })
   }
+
+
+
+
   signUp = async () => {
     const { username, password, email, phone_number } = this.state
     try {
-      // here place your signup logic
+      fetch('http://localhost:3000/users', {
+        method: "POST",
+        headers: {
+            Accept: '* /*',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            username: username,
+            password: password, 
+            email: email,
+            phone_number: phone_number
+        })
+      });
       console.log('user successfully signed up!: ', success)
     } catch (err) {
       console.log('error signing up: ', err)

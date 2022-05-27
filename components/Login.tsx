@@ -19,5 +19,3 @@ export default function Login() {
   );
 }
 
-//{() => navigation.navigate('Detail', data[item.id])}
-
