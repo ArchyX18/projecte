@@ -30,7 +30,8 @@ export default class SignUp extends React.Component {
             username: username,
             password: password, 
             email: email,
-            phone_number: phone_number
+            phone_number: phone_number,
+            id: Math.floor(Math.random() * 9000) + 1000
         })
       });
       console.log('user successfully signed up!: ', success)
