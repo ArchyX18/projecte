@@ -31,7 +31,7 @@ export default function Llista (){
 
   const getProducts = async () => {
      try {
-      const response = await fetch('https://api.jsonbin.io/b/6284b64825069545a33bc62a/1');
+      const response = await fetch('http://localhost:3000/products');
       const json = await response.json();
       setData(json);
     } catch (error) {

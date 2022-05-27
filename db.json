@@ -1,0 +1,89 @@
+{
+  "products": [
+    {
+      "id": 0,
+      "title": "Estoig",
+      "type": "Papereria",
+      "description": "Estoig de multiples colors amb dissny personalitzat.",
+      "filename": "0.jpg",
+      "height": 600,
+      "width": 400,
+      "price": 10,
+      "rating": 4
+    },
+    {
+      "id": 1,
+      "title": "Carpesa",
+      "type": "Papereria",
+      "description": "Carpesans de mida estandar amb disseny personalitzat.",
+      "filename": "1.jpg",
+      "height": 450,
+      "width": 299,
+      "price": 15,
+      "rating": 4
+    },
+    {
+      "id": 2,
+      "title": "Agenda",
+      "type": "Papereria",
+      "description": "Agenda de mida A5 amb disseny personalitzat.",
+      "filename": "2.jpg",
+      "height": 450,
+      "width": 299,
+      "price": 7.99,
+      "rating": 4
+    },
+    {
+      "id": 3,
+      "title": "Cartes del Tarot",
+      "type": "Tarot",
+      "description": "Baralla de cartes del tarot.",
+      "filename": "3.jpg",
+      "height": 450,
+      "width": 299,
+      "price": 19.99,
+      "rating": 4
+    },
+    {
+      "id": 4,
+      "title": "Lamines",
+      "type": "Decoració",
+      "description": "Lamines il·lustrades.",
+      "filename": "5.jpg",
+      "height": 450,
+      "width": 299,
+      "price": 19.99,
+      "rating": 4
+    },
+    {
+      "id": 5,
+      "title": "Llibretes",
+      "type": "Papereria",
+      "description": "Llibretes de mida A4 i A5 amb disseny personalitzat.",
+      "filename": "6.jpg",
+      "height": 450,
+      "width": 299,
+      "price": 14.99,
+      "rating": 4
+    },
+    {
+      "id": 6,
+      "title": "Blocs",
+      "type": "Papereria",
+      "description": "Blocs de mida A5 amb disseny personalitzat.",
+      "filename": "1.jpg",
+      "height": 450,
+      "width": 299,
+      "price": 19.99,
+      "rating": 4
+    }
+  ],
+  "users": [
+    {
+      "username": "adf",
+      "password": "asdf",
+      "email": "asdf",
+      "phone_number": "asfd"
+   } 
+  ]
+}
