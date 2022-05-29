@@ -102,6 +102,20 @@
       "email": "invitado@gmail.com",
       "phone_number": "987654321",
       "id": 6292
+    },
+    {
+      "username": "invitado5",
+      "password": "invitado5",
+      "email": "invitado5@gmail.com",
+      "phone_number": "963852741",
+      "id": 5218
+    },
+    {
+      "username": "invitado5",
+      "password": "invitado5",
+      "email": "invitado5@gmail.com",
+      "phone_number": "963852741",
+      "id": 7017
     }
   ]
 }
