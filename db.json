@@ -99,14 +99,15 @@
       "orderid": 1,
       "userid": 1, 
       "prod":[
-        1,0,5
+        { "id": 3, "quantitat":1, "preu_unitat": 19.99}
       ]
     }, 
     {
       "orderid": 2,
       "userid": 2558, 
-      "prod":[
-        4,5
+      "prod": [
+        { "id": 5, "quantitat":5, "preu_unitat": 14.99},
+        { "id": 0, "quantitat":1, "preu_unitat": 10}
       ]
     }
   ]

@@ -6,7 +6,6 @@ import Login from '../components/Login';
 export default function LoginScreen() {
   return (
     <View style={styles.container}>
-     
       <Login/>
     </View>
       
