@@ -54,21 +54,6 @@ const LoginScreen = ({}) => {
         'application/x-www-form-urlencoded;charset=UTF-8',
       },
     })
-      .then((response) => response.json())
-      .then((responseJson) => {
-        //Hide Loader
-        setLoading(false);
-        console.log(responseJson);
-        // If server response message same as Data Matched
-        if (responseJson.status === 'success') {
-          AsyncStorage.setItem('user_id', responseJson.data.email);
-          console.log(responseJson.data.email);
-          navigation.replace('DrawerNavigationRoutes');
-        } else {
-          setErrortext(responseJson.msg);
-          console.log('Please check your email id or password');
-        }
-      })
       .catch((error) => {
         //Hide Loader
         setLoading(false);

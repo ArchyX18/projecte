@@ -79,7 +79,7 @@ function BottomTabNavigator() {
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerRight: () => (
             <Pressable
-              onPress={() => navigation.navigate('Modal')}
+              onPress={() => navigation.navigate('Carro')}
               style={({ pressed }) => ({
                 opacity: pressed ? 0.5 : 1,
               })}>
