@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Button, StyleSheet } from 'react-native';
 import EditScreenInfo from '../components/EditScreenInfo';
+import LlistaCarro from '../components/flatlistC';
 import { Text, View } from '../components/Themed';
 
 
@@ -10,10 +11,7 @@ export default function ShoppingCart({ navigation }) {
       <Text style={styles.title}>Carro de Compra</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <EditScreenInfo path="/screens/ShoppingCart.tsx" />
-      <Button
-        title="Carro de la compra"
-        onPress={() => navigation.navigate('Detail')}
-      />
+      <LlistaCarro/>
     </View>
   );
 }

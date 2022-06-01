@@ -75,7 +75,7 @@ const LoginScreen = ({}) => {
           <KeyboardAvoidingView enabled>
             <View style={{alignItems: 'center'}}>
               <Image
-                source={('../Image/aboutreact.png')}
+                source={('../assets/images/login/logo.png')}
                 style={{
                   width: '50%',
                   height: 100,
