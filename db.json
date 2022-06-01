@@ -99,35 +99,39 @@
       "price": 19.99,
       "rating": 4
     }
-    
   ],
   "users": [
-    {
-      "username": "adf",
-      "password": "asdf",
-      "email": "asdf",
-      "phone_number": "asfd",
-      "id": 1
-    },
-    {
-      "username": "invitado2",
-      "password": "invitado",
-      "email": "invitado2@gmail.com",
-      "phone_number": "987650321",
-      "id": 2558
-    },
     {
       "name": "Invitado",
       "email": "invitado@gmail.com",
       "age": "18",
       "address": "C/invitado",
       "password": "invitado",
-      "id": 2559
+      "id": 1000
     },
     {
-      "email": "invitado@gmail.com",
-      "password": "invitado",
-      "id": 2560
+      "name": "Invitado2",
+      "email": "invitado2@gmail.com",
+      "age": "24",
+      "address": "c/INVITADO2",
+      "password": "INVITADO2",
+      "id": 1001
+    },
+    {
+      "name": "Invitado3",
+      "email": "invitado3@gmail.com",
+      "age": "24",
+      "address": "c/INVITADO3",
+      "password": "INVITADO3",
+      "id": 1002
+    },
+    {
+      "name": "root",
+      "email": "root",
+      "age": "24",
+      "address": "c/root",
+      "password": "root",
+      "id": 1003
     }
   ],
   "orders": [

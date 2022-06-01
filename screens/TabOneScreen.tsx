@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, Button, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import Llista from '../components/flatlist';
@@ -12,10 +12,8 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
 
       <Text style={styles.title}>Llista de productes</Text>
       
-      
       <Text style={styles.body}>Tots els nostres productes seran enviats, en un periode de 10 a 14 dies laborables, per les nostres empreses col·laboradores.</Text>
 
-      
       <Llista/>
 
     </View>
