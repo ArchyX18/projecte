@@ -4,9 +4,19 @@ import { useNavigation } from '@react-navigation/native';
 
 
 
+//export const url = "http://192.168.1.64";   
+export const url = "http://172.20.10.4";
+//export const url = "http://192.168.42.60";
+
 const Item = ({ item, onPress, backgroundColor, textColor }) => (
+  
   <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
-    <Text style={[styles.title, textColor]}>{item.prod[0].prodid}</Text>
+    
+   <Text style={[styles.title, textColor]}>{item.detall.title}</Text>
+
+   <Text style={[styles.title, textColor]}>{item.preu_unitat}</Text>
+   <Text style={[styles.title, textColor]}>{item.quantitat}</Text>
+    
   </TouchableOpacity>
 );
 
@@ -20,17 +30,25 @@ export default function LlistaCarro (){
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
-
+  const [dataP, setDataP] = useState([]);
 
  
 
 
 
-  const getProducts = async () => {
+
+
+
+  const getOrders = async () => {
      try {
-      const response = await fetch('http://localhost:3000/orders/?userid=2558');
+      const response = await fetch(url+ ':3000/orders/?userid=2558');
       const json = await response.json();
-      setData(json);
+      setData(json[0].prod);
+      const response2 = await fetch(url+ ':3000/products');
+      const json2 = await response2.json();
+      
+      
+      setDataP(json2);
     } catch (error) {
       console.error(error);
     } finally {
@@ -40,8 +58,14 @@ export default function LlistaCarro (){
 
 
   useEffect(() => {
-    getProducts();
+    getOrders();
   }, []);
+
+
+  
+
+
+
 
 
   
@@ -53,18 +77,25 @@ export default function LlistaCarro (){
     const backgroundColor = item.id === selectedId ? "#6e3b6e" : "#f9c2ff";
     const color = item.id === selectedId ? 'white' : 'black';
 
-    console.log(data);
-    
-    //console.log(item.prod[0].prodid);
-    return (
-      <Item
-        item={item}
-        onPress={() => navigation.navigate()}
-        backgroundColor={{ backgroundColor }}
-        textColor={{ color }}
 
-      />
-    );
+
+    
+
+    if(dataP.length!=0){
+      item.detall=dataP[item.prodid];
+
+    
+      return (
+        <Item
+          item={item}
+          onPress={() => navigation.navigate()}
+          backgroundColor={{ backgroundColor }}
+          textColor={{ color }}
+
+        />
+      );
+    }
+    
     
   };
 

@@ -13,7 +13,9 @@ import {
 import { useNavigation } from '@react-navigation/native';
  
 
-
+//export const url = "http://192.168.1.64";   
+export const url = "http://172.20.10.4";
+//export const url = "http://192.168.42.60";
  
 const LoginScreen = ({}) => {
   const [userEmail, setUserEmail] = useState('');
@@ -45,7 +47,7 @@ const LoginScreen = ({}) => {
     }
     formBody = formBody.join('&');
  
-    fetch('http://localhost:3000/users', {
+    fetch(url+ ':3000/users', {
       method: 'POST',
       body: formBody,
       headers: {

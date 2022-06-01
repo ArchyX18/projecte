@@ -10,6 +10,10 @@ import {
   TouchableOpacity,
   ScrollView,
 } from 'react-native';
+
+//export const url = "http://192.168.1.64";   
+export const url = "http://172.20.10.4";
+//export const url = "http://192.168.42.60";
  
  
 const RegisterScreen = (props) => {
@@ -69,7 +73,7 @@ const RegisterScreen = (props) => {
     }
     formBody = formBody.join('&');
  
-    fetch('http://localhost:3000/users', {
+    fetch(url+ ':3000/users', {
       method: 'POST',
       body: formBody,
       headers: {

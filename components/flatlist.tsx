@@ -1,16 +1,23 @@
 import React, { useEffect, useState } from "react";
-import { FlatList, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, Image } from "react-native";
+import { FlatList, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 
 
 
+//export const url = "http://192.168.1.64";   
+export const url = "http://172.20.10.4";
+//export const url = "http://192.168.42.60";
+
 const Item = ({ item, onPress, backgroundColor, textColor }) => (
   <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
     <Text style={[styles.title, textColor]}>{item.title}</Text>
-    
   </TouchableOpacity>
 );
 
+
+
+
+ 
 
 export default function Llista (){
   const [selectedId, setSelectedId] = useState(null);
@@ -19,13 +26,13 @@ export default function Llista (){
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
-  
 
 
+ 
 
   const getProducts = async () => {
      try {
-      const response = await fetch('http://localhost:3000/products/');
+      const response = await fetch(url+ ':3000/products');
       const json = await response.json();
       setData(json);
     } catch (error) {
@@ -41,11 +48,12 @@ export default function Llista (){
   }, []);
 
 
+  
 
   const renderItem = ({ item }) => {
-    const backgroundColor = item.id === selectedId ? "#6e3b6e" : "#307ecc";
-    const color = item.id === selectedId ? 'black' : 'white';
-    //console.log(item.filename);
+    const backgroundColor = item.id === selectedId ? "#6e3b6e" : "#f9c2ff";
+    const color = item.id === selectedId ? 'white' : 'black';
+    //console.log(item.id);
     return (
       <Item
         item={item}
@@ -85,7 +93,5 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 32,
-    justifyContent: 'center',
-    alignContent: 'center',
   },
 });

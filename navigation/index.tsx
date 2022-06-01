@@ -45,10 +45,10 @@ function RootNavigator() {
       <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
 
-      <Stack.Screen name="Carro" component={ShoppingCart} />
-      <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
-      <Stack.Screen name="Login" component={LoginScreenS} />
-      <Stack.Screen name="Detail" component={ProdDetail} />
+      <Stack.Screen name="Carro" component={ShoppingCart} options={{ title: 'React-Native Shopping App!' }} />
+      <Stack.Screen name="RegisterScreen" component={RegisterScreen} options={{ title: 'React-Native Shopping App!' }}/>
+      <Stack.Screen name="Login" component={LoginScreenS} options={{ title: 'React-Native Shopping App!' }}/>
+      <Stack.Screen name="Detail" component={ProdDetail} options={{ title: 'React-Native Shopping App!' }}/>
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Modal" component={ModalScreen} />
       </Stack.Group>
@@ -75,7 +75,7 @@ function BottomTabNavigator() {
         name="TabOne"
         component={TabOneScreen}
         options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
-          title: 'Llista de productes',
+          title: 'React-Native Shopping App',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerRight: () => (
             <Pressable
