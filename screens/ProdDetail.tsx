@@ -19,7 +19,7 @@ export default function ProdDetail({route}) {
       <Text style={styles.title}>{route.params.title}</Text>
       <Text>{route.params.description}</Text>
       <Text>{route.params.price} €</Text>
-      <Image source={{ uri: img }} />
+      <Image source={require( "../assets/images/products/estoig.png")} />
 
       
     </View>

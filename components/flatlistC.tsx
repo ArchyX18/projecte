@@ -11,6 +11,8 @@ const Item = ({ item, onPress, backgroundColor, textColor }) => (
 );
 
 
+
+
 export default function LlistaCarro (){
   const [selectedId, setSelectedId] = useState(null);
   const navigation = useNavigation();
@@ -18,9 +20,11 @@ export default function LlistaCarro (){
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
+
+
  
 
-  console.log(data[0]);
+
 
   const getProducts = async () => {
      try {
@@ -48,6 +52,8 @@ export default function LlistaCarro (){
   const renderItem = ({ item }) => {
     const backgroundColor = item.id === selectedId ? "#6e3b6e" : "#f9c2ff";
     const color = item.id === selectedId ? 'white' : 'black';
+
+    console.log(data);
     
     //console.log(item.prod[0].prodid);
     return (
@@ -59,6 +65,7 @@ export default function LlistaCarro (){
 
       />
     );
+    
   };
 
 

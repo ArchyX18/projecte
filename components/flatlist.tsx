@@ -25,7 +25,7 @@ export default function Llista (){
 
   const getProducts = async () => {
      try {
-      const response = await fetch('http://localhost:3000/products');
+      const response = await fetch('http://localhost:3000/products/');
       const json = await response.json();
       setData(json);
     } catch (error) {
@@ -43,8 +43,8 @@ export default function Llista (){
 
 
   const renderItem = ({ item }) => {
-    const backgroundColor = item.id === selectedId ? "#6e3b6e" : "#f9c2ff";
-    const color = item.id === selectedId ? 'white' : 'black';
+    const backgroundColor = item.id === selectedId ? "#6e3b6e" : "#307ecc";
+    const color = item.id === selectedId ? 'black' : 'white';
     //console.log(item.filename);
     return (
       <Item
@@ -85,5 +85,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 32,
+    justifyContent: 'center',
+    alignContent: 'center',
   },
 });

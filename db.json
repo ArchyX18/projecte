@@ -34,6 +34,17 @@
       "rating": 4
     },
     {
+      "id": 3,
+      "title": "Cartes",
+      "type": "Papereria",
+      "description": "Blocs de mida A5 amb disseny personalitzat.",
+      "filename": "../assets/images/products/blocs.png",
+      "height": 450,
+      "width": 299,
+      "price": 19.99,
+      "rating": 4
+    },
+    {
       "id": 4,
       "title": "Lamines",
       "type": "Decoració",
@@ -65,7 +76,30 @@
       "width": 299,
       "price": 19.99,
       "rating": 4
+    },
+    {
+      "id": 7,
+      "title": "Blocs2",
+      "type": "Papereria",
+      "description": "Blocs de mida A5 amb disseny personalitzat.",
+      "filename": "../assets/images/products/blocs.png",
+      "height": 450,
+      "width": 299,
+      "price": 19.99,
+      "rating": 4
+    },
+    {
+      "id": 8,
+      "title": "Blocs3",
+      "type": "Papereria",
+      "description": "Blocs de mida A5 amb disseny personalitzat.",
+      "filename": "../assets/images/products/blocs.png",
+      "height": 450,
+      "width": 299,
+      "price": 19.99,
+      "rating": 4
     }
+    
   ],
   "users": [
     {
@@ -81,22 +115,49 @@
       "email": "invitado2@gmail.com",
       "phone_number": "987650321",
       "id": 2558
+    },
+    {
+      "name": "Invitado",
+      "email": "invitado@gmail.com",
+      "age": "18",
+      "address": "C/invitado",
+      "password": "invitado",
+      "id": 2559
+    },
+    {
+      "email": "invitado@gmail.com",
+      "password": "invitado",
+      "id": 2560
     }
   ],
   "orders": [
     {
       "orderid": 1,
-      "userid": 1, 
-      "prod":[
-        { "id": 3, "quantitat":1, "preu_unitat": 19.99}
+      "userid": 1,
+      "prod": [
+        {
+          "id": 3,
+          "quantitat": 1,
+          "preu_unitat": 19.99
+        }
       ]
-    }, 
+    },
     {
       "orderid": 2,
-      "userid": 2558, 
+      "userid": 2558,
       "prod": [
-        { "id": 0, "prodid": 5, "quantitat":5, "preu_unitat": 14.99},
-        { "id": 1, "prodid": 0, "quantitat":1, "preu_unitat": 10}
+        {
+          "id": 0,
+          "prodid": 5,
+          "quantitat": 5,
+          "preu_unitat": 14.99
+        },
+        {
+          "id": 1,
+          "prodid": 0,
+          "quantitat": 1,
+          "preu_unitat": 10
+        }
       ]
     }
   ]
