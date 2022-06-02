@@ -9,32 +9,46 @@ export const url = "http://localhost";
  
 
 const Item = ({ item, onPress, backgroundColor, textColor }) => (
+  
   <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
-    <Text style={[styles.title, textColor]}>{item.title}</Text>
+    
+   <Text style={[styles.title, textColor]}>{item.detall.title}</Text>
+
+   <Text style={[styles.title, textColor]}>{item.preu_unitat}</Text>
+   <Text style={[styles.title, textColor]}>{item.quantitat}</Text>
+    
   </TouchableOpacity>
 );
 
 
 
 
- 
-
-export default function Llista (){
+export default function LlistaCarro (){
   const [selectedId, setSelectedId] = useState(null);
   const navigation = useNavigation();
 
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
-
+  const [dataP, setDataP] = useState([]);
 
  
 
-  const getProducts = async () => {
+
+
+
+
+
+  const getOrders = async () => {
      try {
-      const response = await fetch(url+ ':3000/products');
+      const response = await fetch(url+ ':3000/orders/?userid=2558');
       const json = await response.json();
-      setData(json);
+      setData(json[0].prod);
+      const response2 = await fetch(url+ ':3000/products');
+      const json2 = await response2.json();
+      
+      
+      setDataP(json2);
     } catch (error) {
       console.error(error);
     } finally {
@@ -44,25 +58,45 @@ export default function Llista (){
 
 
   useEffect(() => {
-    getProducts();
+    getOrders();
   }, []);
 
 
   
 
+
+
+
+
+  
+
+ 
+
+
   const renderItem = ({ item }) => {
     const backgroundColor = item.id === selectedId ? "#6e3b6e" : "#f9c2ff";
     const color = item.id === selectedId ? 'white' : 'black';
-    //console.log(item.id);
-    return (
-      <Item
-        item={item}
-        onPress={() => navigation.navigate('Detail', data[item.id])}
-        backgroundColor={{ backgroundColor }}
-        textColor={{ color }}
 
-      />
-    );
+
+
+    
+
+    if(dataP.length!=0){
+      item.detall=dataP[item.prodid];
+
+    
+      return (
+        <Item
+          item={item}
+          onPress={() => navigation.navigate()}
+          backgroundColor={{ backgroundColor }}
+          textColor={{ color }}
+
+        />
+      );
+    }
+    
+    
   };
 
 
