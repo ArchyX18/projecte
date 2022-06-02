@@ -1,7 +1,6 @@
 import * as React from 'react';
 import React2, { useEffect, useState } from "react";
 import { Button, StyleSheet } from 'react-native';
-import EditScreenInfo from '../components/EditScreenInfo';
 import LlistaCarro from '../components/flatlistC';
 import { Text, View } from '../components/Themed';
 
@@ -15,15 +14,11 @@ export const url = "http://localhost";
 
 export default function ShoppingCart({ navigation }) {
 
-  
 
   const [selectedId, setSelectedId] = useState(null);
 
   const [isLoading, setLoading] = useState(true);
   const [total, setTotal] = useState([]);
-
-
-
  
 
   const getTotal = async () => {

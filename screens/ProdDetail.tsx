@@ -7,16 +7,11 @@ import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
 export default function ProdDetail({route}) {
-  //console.log(route.params.filename);
-
-
-  
-  
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{route.params.title}</Text>
-      <Text>{route.params.description}</Text>
+      <Text style={styles.body}>{route.params.description}</Text>
       <Text>{route.params.price} €</Text>
       <Image
           style={styles.img}
@@ -26,10 +21,7 @@ export default function ProdDetail({route}) {
       
     </View>
 
-  );
-
- 
-  
+  );  
 }
 
 const styles = StyleSheet.create({
@@ -42,14 +34,19 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
   },
+  
+  body: {
+    margin:10
+  },
+
   separator: {
     marginVertical: 30,
     height: 1,
     width: '80%',
   },
   img: {
-    width: 100, 
-    height: 100
+    width: 500, 
+    height: 500
   }
 });
 
